@@ -5,6 +5,7 @@ import {BsModalRef} from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import {SearchQueryTypes, TextSearch} from '../../../../common/entities/SearchQueryDTO';
 import {UserRoles} from '../../../../common/entities/UserDTO';
 import {AuthenticationService} from '../../model/network/authentication.service';
+import {Constants} from '../../../const';
 
 @Component({
   selector: 'app-albums',
@@ -53,7 +54,7 @@ export class AlbumsComponent implements OnInit {
   }
 
   private updateSize(): void {
-    const size = 220 + 5;
+    const size = Constants.thumb_size;//220 + 5;
     // body - container margin
     const containerWidth = this.container.nativeElement.clientWidth - 30;
     this.size = (containerWidth / Math.round((containerWidth / size))) - 5;

@@ -1,6 +1,7 @@
 import {Component, ElementRef, Input, OnChanges} from '@angular/core';
 import {DeviceDetectorService} from 'ngx-device-detector';
 import {SubDirectoryDTO} from '../../../../../common/entities/DirectoryDTO';
+import {Constants} from '../../../../const';
 
 @Component({
   selector: 'app-gallery-directories',
@@ -26,7 +27,7 @@ export class DirectoriesComponent implements OnChanges {
       // On portrait mode, show 2 directories side by side with some padding
       this.size = Math.round(window.innerWidth / 2) - 25;
     } else {
-      const size = 220 + 5;
+      const size = Constants.thumb_size;//220 + 5; 
       const containerWidth = this.container.nativeElement.parentElement.clientWidth;
       this.size = (containerWidth / Math.round((containerWidth / size))) - 5;
     }
